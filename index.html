@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vicente Sosa Martinez — Desarrollador Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="nav-logo">VSM</span>
+      <div class="nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#estudios">Estudios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto" class="nav-cta">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg-shape shape-1"></div>
+    <div class="hero-bg-shape shape-2"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="avatar">VS</div>
+        <div class="hero-text">
+          <p class="hero-eyebrow">Hola, soy</p>
+          <h1>Vicente Sosa Martinez</h1>
+          <p class="tagline">Desarrollador Web · Estudiante de Programación</p>
+          <p class="location">📍 Argentina</p>
+          <div class="hero-actions">
+            <a href="#proyectos" class="btn-primary">Ver proyectos</a>
+            <a href="#contacto" class="btn-secondary">Contactarme</a>
+          </div>
+        </div>
+      </div>
+      <!-- Scroll indicator -->
+      <div class="scroll-hint">
+        <span>Deslizá para explorar</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="card reveal">
+      <div class="card-label">01</div>
+      <h2><span class="icon">👤</span> Sobre mí</h2>
+      <p>
+        Soy un desarrollador web en formación con pasión por construir experiencias digitales bien hechas.
+        Me interesa tanto el diseño de interfaces como la lógica detrás de cada proyecto.
+        Busco constantemente aprender, mejorar y colaborar con otras personas que compartan ese mismo impulso.
+      </p>
+      <p>
+        Actualmente estoy cursando mis estudios mientras desarrollo proyectos propios y exploro nuevas tecnologías.
+        Me motiva transformar ideas en productos reales y funcionales.
+      </p>
+    </section>
+
+    <!-- QUÉ HAGO / QUÉ PUEDO OFRECER -->
+    <section id="servicios" class="card reveal">
+      <div class="card-label">02</div>
+      <h2><span class="icon">⚡</span> Qué hago &amp; qué puedo ofrecer</h2>
+      <div class="grid-2">
+        <div class="service-item reveal-child">
+          <div class="service-icon">🖥</div>
+          <h3>Desarrollo Frontend</h3>
+          <p>Creación de interfaces web modernas, responsivas y accesibles usando HTML, CSS y JavaScript.</p>
+        </div>
+        <div class="service-item reveal-child">
+          <div class="service-icon">🚀</div>
+          <h3>Sitios Web estáticos</h3>
+          <p>Landing pages, portfolios y sitios informativos optimizados para carga rápida y buen SEO.</p>
+        </div>
+        <div class="service-item reveal-child">
+          <div class="service-icon">🤝</div>
+          <h3>Proyectos colaborativos</h3>
+          <p>Apertura para trabajar en equipo, participar en proyectos open source o iniciativas educativas.</p>
+        </div>
+        <div class="service-item reveal-child">
+          <div class="service-icon">📚</div>
+          <h3>Aprendizaje continuo</h3>
+          <p>Siempre en proceso de incorporar nuevas herramientas y buenas prácticas al flujo de trabajo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTUDIOS -->
+    <section id="estudios" class="card reveal">
+      <div class="card-label">03</div>
+      <h2><span class="icon">🎓</span> Estudios</h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal-child">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Colegio NorBridge</h3>
+            <span class="timeline-year">En curso</span>
+            <p>Educación secundaria con orientación tecnológica. Formación en programación, lógica computacional y herramientas digitales.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-child">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Desarrollo Web — Autodidacta</h3>
+            <span class="timeline-year">2024 – presente</span>
+            <p>Aprendizaje autónomo mediante proyectos prácticos, documentación oficial, cursos online y comunidades de desarrollo.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="card reveal">
+      <div class="card-label">04</div>
+      <h2><span class="icon">🌐</span> Mis proyectos web</h2>
+      <div class="grid-2">
+
+        <div class="project-card reveal-child">
+          <div class="project-header">
+            <h3>AulaSync</h3>
+            <span class="project-status status-done">Completado</span>
+          </div>
+          <div class="project-desc">
+            <p class="desc-short">Plataforma integral de gestión académica para estudiantes con asistencia de IA. Organiza tareas, exámenes, proyectos y apuntes en un solo lugar. <span class="desc-extra hidden"> A comprehensive academic management platform for students with AI assistance. Organize assignments, applications, projects, and notes all in one place.</span><button class="desc-toggle" aria-expanded="false">más</button></p>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn-sm">Ver demo</a>
+            <a href="https://github.com/vicentesosa" class="btn-sm btn-outline" target="_blank">Código</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal-child">
+          <div class="project-header">
+            <h3>ISArquitectura</h3>
+            <span class="project-status status-wip">En desarrollo</span>
+          </div>
+          <div class="project-desc">
+            <p class="desc-short">Plataforma dedicada a la trayectoria y visión del estudio, donde se exhiben proyectos destacados, formación académica y una metodología de trabajo basada en la innovación. Un recorrido por obras que fusionan técnica y diseño para crear espacios funcionales que responden a las necesidades del entorno actual. <span class="desc-extra hidden"> A showcase of the studio's vision and expertise, featuring key architectural projects, academic background, and a workflow driven by innovation. This platform explores the fusion of technical precision and design to create functional spaces tailored to the modern environment.</span><button class="desc-toggle" aria-expanded="false">más</button></p>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn-sm">Ver demo</a>
+            <a href="#" class="btn-sm btn-outline">Código</a>
+          </div>
+        </div>
+
+      </div>
+      <p class="projects-note">
+        Más proyectos en <a href="https://github.com/vicentesosa" target="_blank">github.com/vicentesosa</a>
+      </p>
+    </section>
+
+    <!-- TECNOLOGÍAS -->
+    <section id="tecnologias" class="card reveal">
+      <div class="card-label">05</div>
+      <h2><span class="icon">🛠</span> Tecnologías &amp; herramientas</h2>
+      <p class="tech-hint">Hacé clic en cualquier herramienta para ver más info.</p>
+      <div class="tech-grid">
+        <button class="tech-tag"
+          data-icon="🌐"
+          data-name="HTML5"
+          data-type="Lenguaje de marcado"
+          data-desc="El esqueleto de toda página web. Define la estructura y el significado del contenido mediante etiquetas semánticas como &lt;header&gt;, &lt;main&gt;, &lt;article&gt; y más."
+          data-use="Estructuro todas mis páginas web y componentes de forma semántica y accesible.">HTML5</button>
+
+        <button class="tech-tag"
+          data-icon="🎨"
+          data-name="CSS3"
+          data-type="Lenguaje de estilos"
+          data-desc="Controla la apariencia visual de la web: colores, tipografía, layouts, animaciones y diseño responsivo. Incluye Flexbox, Grid y custom properties."
+          data-use="Lo uso para crear interfaces atractivas y adaptadas a cualquier tamaño de pantalla.">CSS3</button>
+
+        <button class="tech-tag"
+          data-icon="⚡"
+          data-name="JavaScript"
+          data-type="Lenguaje de programación"
+          data-desc="El lenguaje de la web. Permite agregar interactividad, manipular el DOM, consumir APIs y crear experiencias dinámicas sin recargar la página."
+          data-use="Lo aplico para lógica de negocio, animaciones y comunicación con servicios externos.">JavaScript</button>
+
+        <button class="tech-tag"
+          data-icon="🌿"
+          data-name="Git"
+          data-type="Control de versiones"
+          data-desc="Sistema distribuido de control de versiones. Permite registrar cada cambio en el código, trabajar en ramas independientes y revertir errores con facilidad."
+          data-use="Lo uso en todos mis proyectos para mantener un historial limpio y trabajar sin riesgo.">Git</button>
+
+        <button class="tech-tag"
+          data-icon="🐙"
+          data-name="GitHub"
+          data-type="Plataforma de repositorios"
+          data-desc="Plataforma en la nube para alojar repositorios Git. Facilita la colaboración, el code review, los Issues y el despliegue continuo mediante Actions."
+          data-use="Publico y comparto todos mis proyectos en github.com/vicentesosa.">GitHub</button>
+
+        <button class="tech-tag"
+          data-icon="💻"
+          data-name="VS Code"
+          data-type="Editor de código"
+          data-desc="Editor de código ligero y extensible de Microsoft. Ofrece IntelliSense, depurador integrado, soporte para Git y miles de extensiones."
+          data-use="Es mi editor principal del día a día para desarrollar, depurar y gestionar proyectos.">VS Code</button>
+      </div>
+
+      <!-- Panel de info de herramienta -->
+      <div class="tech-info-panel hidden" id="techPanel">
+        <div class="tech-panel-left">
+          <span class="tech-panel-icon" id="panelIcon"></span>
+          <strong id="panelName"></strong>
+          <span class="tech-panel-type" id="panelType"></span>
+        </div>
+        <div class="tech-panel-divider"></div>
+        <div class="tech-panel-right">
+          <p id="panelDesc"></p>
+          <p class="tech-panel-use"><span class="use-label">Cómo lo uso:</span> <span id="panelUse"></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="card card-highlight reveal">
+      <div class="card-label card-label-light">06</div>
+      <h2><span class="icon">💬</span> Contáctame</h2>
+      <p>
+        Ya sea que tengas una propuesta, una duda, o simplemente quieras charlar sobre desarrollo web,
+        podés escribirme. Estoy abierto a nuevas conexiones y oportunidades.
+      </p>
+      <div class="contact-grid">
+        <a href="mailto:vicentesosa@gmail.com" class="contact-link">
+          <span class="contact-icon">✉</span>
+          <span>vicentesosa@gmail.com</span>
+        </a>
+        <!-- Descomentá y completá los que uses -->
+        <!--
+        <a href="https://github.com/TU_USUARIO" class="contact-link" target="_blank">
+          <span class="contact-icon">⌥</span>
+          <span>github.com/TU_USUARIO</span>
+        </a>
+        <a href="https://linkedin.com/in/TU_USUARIO" class="contact-link" target="_blank">
+          <span class="contact-icon">in</span>
+          <span>linkedin.com/in/TU_USUARIO</span>
+        </a>
+        -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Vicente Sosa Martinez · <span id="year"></span> · Hecho con ♥</p>
+    </div>
+  </footer>
+
+  <script>
+    // Año automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Animaciones al hacer scroll ──────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.querySelectorAll('.reveal-child').forEach((child, i) => {
+        child.style.transitionDelay = `${i * 150}ms`;
+        observer.observe(child);
+      });
+    });
+
+    // ── Navbar scroll effect ─────────────────────────────────────
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── Expandir descripción AulaSync ────────────────────────────
+    document.querySelectorAll('.desc-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const extra  = btn.previousElementSibling;
+        const open   = btn.getAttribute('aria-expanded') === 'true';
+
+        extra.classList.toggle('hidden', open);
+        btn.setAttribute('aria-expanded', String(!open));
+        btn.textContent = open ? 'más' : 'menos';
+      });
+    });
+
+    // ── Panel de tecnologías ─────────────────────────────────────
+    const panel    = document.getElementById('techPanel');
+    const pIcon    = document.getElementById('panelIcon');
+    const pName    = document.getElementById('panelName');
+    const pType    = document.getElementById('panelType');
+    const pDesc    = document.getElementById('panelDesc');
+    const pUse     = document.getElementById('panelUse');
+
+    let activeTag  = null;
+
+    document.querySelectorAll('.tech-tag').forEach(tag => {
+      tag.addEventListener('click', () => {
+        // Si ya está activo, cierra
+        if (activeTag === tag) {
+          panel.classList.add('hidden');
+          tag.classList.remove('active');
+          activeTag = null;
+          return;
+        }
+
+        // Actualiza activo
+        if (activeTag) activeTag.classList.remove('active');
+        activeTag = tag;
+        tag.classList.add('active');
+
+        // Rellena el panel
+        pIcon.textContent  = tag.dataset.icon;
+        pName.textContent  = tag.dataset.name;
+        pType.textContent  = tag.dataset.type;
+        pDesc.innerHTML    = tag.dataset.desc;
+        pUse.textContent   = tag.dataset.use;
+
+        panel.classList.remove('hidden');
+
+        // Scroll suave al panel
+        setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+      });
+    });
+  </script>
+
+</body>
+</html>
