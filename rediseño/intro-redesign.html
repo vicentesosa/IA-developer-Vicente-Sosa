@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vicente Sosa Martinez — Hero Redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --white: #ffffff;
+    --off-white: #f7f6f3;
+    --black: #0e0e0e;
+    --mid: #6b6b6b;
+    --light: #d4d4d4;
+    --accent: #1a1a1a;
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--white);
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+  }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  /* decorative vertical rule */
+  .v-rule {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: var(--light);
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeIn 1.2s ease 0.4s forwards;
+  }
+
+  /* horizontal rule */
+  .h-rule {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: var(--light);
+    opacity: 0;
+    animation: fadeIn 1.2s ease 0.6s forwards;
+  }
+
+  /* ── LEFT PANEL ───────────────────────────────────── */
+  .left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 64px;
+    z-index: 2;
+  }
+
+  .label-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise 0.8s ease 0.5s forwards;
+  }
+
+  .label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--black);
+    flex-shrink: 0;
+  }
+
+  .label-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .greeting {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: clamp(22px, 2.5vw, 32px);
+    color: var(--mid);
+    margin-bottom: 8px;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise 0.8s ease 0.65s forwards;
+  }
+
+  .name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(52px, 6vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 36px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: rise 0.9s ease 0.8s forwards;
+  }
+
+  .name em {
+    font-style: italic;
+    color: var(--mid);
+  }
+
+  .tagline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--mid);
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    max-width: 340px;
+    margin-bottom: 48px;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise 0.8s ease 1s forwards;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: rise 0.8s ease 1.1s forwards;
+  }
+
+  .btn-primary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: var(--black);
+    padding: 14px 28px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: #333;
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--black);
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .btn-ghost:hover { opacity: 0.5; }
+
+  /* location badge */
+  .location {
+    position: absolute;
+    bottom: 60px;
+    left: 64px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.4s forwards;
+  }
+
+  .location-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.4;
+  }
+
+  .location-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  /* ── RIGHT PANEL ──────────────────────────────────── */
+  .right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  /* big VS monogram */
+  .monogram-wrap {
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1.2s ease 0.3s forwards;
+  }
+
+  .monogram-bg {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(220px, 24vw, 340px);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    color: #f0eeea;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* floating badge over monogram */
+  .badge {
+    position: absolute;
+    bottom: 28px;
+    right: -16px;
+    background: var(--black);
+    color: #fff;
+    padding: 14px 20px;
+    z-index: 3;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: popIn 0.6s cubic-bezier(0.34,1.56,0.64,1) 1.3s forwards;
+  }
+
+  .badge-top {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 4px;
+  }
+
+  .badge-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .badge-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-top: 4px;
+  }
+
+  /* skill pills */
+  .pills {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.2s forwards;
+  }
+
+  .pill {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    border: 1px solid var(--light);
+    padding: 6px 14px;
+    text-align: center;
+    background: #fff;
+  }
+
+  /* scroll hint */
+  .scroll-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.6s forwards;
+    z-index: 10;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: var(--black);
+    animation: scrollPulse 2s ease-in-out 2s infinite;
+  }
+
+  .scroll-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  /* ── CORNER NUMBERS ───────────────────────────────── */
+  .corner {
+    position: absolute;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: #ccc;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.5s forwards;
+  }
+  .corner-tl { top: 24px; left: 24px; }
+  .corner-tr { top: 24px; right: 24px; }
+
+  /* ── KEYFRAMES ────────────────────────────────────── */
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes popIn {
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(0.5); opacity: 0.4; }
+  }
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="v-rule"></div>
+  <div class="h-rule"></div>
+
+  <span class="corner corner-tl">01 / INTRO</span>
+  <span class="corner corner-tr">2026</span>
+
+  <!-- LEFT -->
+  <div class="left">
+    <div class="label-row">
+      <span class="label-dot"></span>
+      <span class="label-text">Desarrollador Web · Argentina</span>
+    </div>
+
+    <p class="greeting">Hola, soy</p>
+    <h1 class="name">Vicente<br><em>Sosa</em><br>Martinez</h1>
+
+    <p class="tagline">
+      Estudiante de programación en la UTN, apasionado por construir experiencias web modernas, funcionales y con propósito.
+    </p>
+
+    <div class="cta-row">
+      <a href="#proyectos" class="btn-primary">Ver proyectos</a>
+      <a href="#contacto" class="btn-ghost">Contactarme</a>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <div class="pills">
+      <span class="pill">Frontend</span>
+      <span class="pill">Backend</span>
+      <span class="pill">IA</span>
+    </div>
+
+    <div class="monogram-wrap">
+      <div class="monogram-bg">VS</div>
+      <div class="badge">
+        <div class="badge-top">Disponible</div>
+        <div class="badge-num">2026</div>
+        <div class="badge-label">para proyectos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- scroll -->
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-label">Explorar</span>
+  </div>
+</section>
+
+</body>
+</html>
