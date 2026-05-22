@@ -292,10 +292,10 @@
           <span class="contact-icon">✉</span>
           <span>vicentesosamar@gmail.com</span>
         </a>
-        <div class="contact-link">
+        <a href="https://wa.me/5491168749398" class="contact-link" target="_blank" rel="noopener noreferrer">
           <span class="contact-icon">📱</span>
-          <span>+54 11 68749398</span>
-        </div>
+          <span>WhatsApp</span>
+        </a>
       </div>
     </section>
 
@@ -304,12 +304,12 @@
   <footer>
     <div class="footer-inner">
       <span class="footer-logo">VSM</span>
-      <p>Vicente Sosa Martinez · <span id="year"></span> · Hecho con ♥</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     // ── Animaciones al hacer scroll ──────────────────────────────
     const observer = new IntersectionObserver((entries) => {
